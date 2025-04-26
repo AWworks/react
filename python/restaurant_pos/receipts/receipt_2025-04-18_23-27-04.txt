@@ -1,0 +1,6 @@
+Pasta x2 = $15.98
+Burger x2 = $11.98
+
+Subtotal: $27.96
+Tax (10%): $2.80
+Total: $30.76

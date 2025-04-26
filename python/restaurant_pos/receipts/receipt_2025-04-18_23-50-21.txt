@@ -1,0 +1,8 @@
+Pasta x1 = ₹7.99
+Burger x2 = ₹11.98
+Fries x1 = ₹2.99
+Ice Cream x2 = ₹6.98
+
+Subtotal: ₹29.94
+Tax (10%): ₹2.99
+Total: ₹32.93

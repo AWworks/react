@@ -1,0 +1,9 @@
+Coffee x2 = $4.98
+Soda x2 = $3.98
+Burger x2 = $11.98
+Pasta x2 = $15.98
+Fries x2 = $5.98
+
+Subtotal: $42.90
+Tax (10%): $4.29
+Total: $47.19

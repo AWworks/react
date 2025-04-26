@@ -1,0 +1,11 @@
+===== My Restaurant Receipt =====
+Date: 2025-04-14 11:52:27
+-------------------------------
+Burger x1: $5.99
+Pasta x3: $23.97
+Pizza x4: $35.96
+-------------------------------
+Subtotal: $65.92
+Tax (10%): $6.59
+Total: $72.51
+Thank you for your order!

@@ -1,0 +1,11 @@
+===== My Restaurant Receipt =====
+Date: 2025-04-14 12:08:34
+-------------------------------
+Burger x1: $5.99
+Soda x3: $5.97
+Water x3: $2.97
+-------------------------------
+Subtotal: $14.93
+Tax (10%): $1.49
+Total: $16.42
+Thank you for your order!

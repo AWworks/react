@@ -1,0 +1,8 @@
+Pasta x2 = $15.98
+Fries x2 = $5.98
+Burger x2 = $11.98
+Ice Cream x2 = $6.98
+
+Subtotal: $40.92
+Tax (10%): $4.09
+Total: $45.01

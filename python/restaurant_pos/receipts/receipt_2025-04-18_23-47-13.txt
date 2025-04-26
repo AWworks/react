@@ -1,0 +1,5 @@
+Pasta x1 = ₹7.99
+
+Subtotal: ₹7.99
+Tax (10%): ₹0.80
+Total: ₹8.79

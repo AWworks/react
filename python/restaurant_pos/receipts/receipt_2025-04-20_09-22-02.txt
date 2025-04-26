@@ -1,0 +1,7 @@
+Ice Cream x3 = ₹10.47
+Water x2 = ₹1.98
+Burger x2 = ₹11.98
+
+Subtotal: ₹24.43
+Tax (10%): ₹2.44
+Total: ₹26.87
