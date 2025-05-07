@@ -1,6 +1,5 @@
 public class EncapsulationDemo {
 
-    
 }
 
 class Person {
@@ -20,17 +19,17 @@ class Person {
 
     // Setter for name
     public void setName(String name) {
-        if(isNameValid(name)) {
+        if (isNameValid(name)) {
             this.name = name;
         } else {
             System.out.println("Invalid name. Name should not be empty.");
         }
     }
 
-//     private boolean isNameValid(String name2) {
-//         return nam
-// urn name2 != null && !name2.trim().isEmpty();
-    
+    private boolean isNameValid(String name2) {
+
+        return name2 != null && !name2.trim().isEmpty();
+    }
 
     // Getter for age
     public int getAge() {
