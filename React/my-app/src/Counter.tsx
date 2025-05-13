@@ -10,7 +10,10 @@ function Counter(props: CounterProps) {
         <div className="card border-info m-3">
             <h1 className="text-warning m-3">{props.title}</h1>
             <div>
-                <button onClick={() => setCount(count + 1)}>Increment</button>
+                <button onClick={() => setCount(count < 100 ? count + 1: count)}>Increment</button>
+            </div>
+            <div>
+                <button onClick={() => setCount(count > 0 ? count - 1: count)}>Decrement</button>
             </div>
             <h4>
                 Count: <span className="badge bg-primary">{count}</span>
