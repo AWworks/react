@@ -4,6 +4,7 @@ import './App.css'
 import ToggleSwitch from './components/ToggleSwitch'
 import UserProfile from './components/UserProfile'
 // import Counter from './Counter'
+import GreetUser from './components/GreetUser'
 
 function App() {
 
@@ -22,7 +23,10 @@ function App() {
       {/* <Course />
       <Counter title='Counter 1' initialCount={10} />
       <Counter title='Counter 2' initialCount={20} /> */}
-      {/* <ToggleSwitch /> */}
+      <GreetUser name={user.name} />
+      <hr />
+      <ToggleSwitch />
+      <hr />
       <UserProfile
         name={user.name}
         email={user.email}
