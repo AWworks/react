@@ -6,7 +6,8 @@ import UserProfile from './components/UserProfile'
 // import Counter from './Counter'
 import LiveUpdate from './components/LiveUpdate'
 import ToggleTheme from './components/ToggleTheme'
-
+import BookInfo from './components/BookInfo'
+import CourseList from './components/CourseList'
 function App() {
 
   // const user = {
@@ -28,6 +29,23 @@ function App() {
       <LiveUpdate />
       <UserProfile />
       <ToggleTheme />
+      <BookInfo
+        title="Investment Strategies for The Restless"
+        author='Nicholas Tyler'
+        year={2012}
+        price={2500}
+        genre={["Business", "Investment", "Planning"]}
+      />
+
+      <BookInfo
+        title="Thinking in Java"
+        author='Marie Price'
+        year={2015}
+        price={1500}
+        genre={["Programming", "Logic", "Planning"]}
+      />
+
+      <CourseList />
     </>
   )
 }
