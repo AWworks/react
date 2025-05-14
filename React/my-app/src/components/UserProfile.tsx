@@ -1,29 +1,25 @@
-import "./UserProfile.css"
+import React, { useState } from 'react';
 
-interface ProfileProps {
-    name: string;
-    email: string;
-    phone: string;
-    summary: string;
-    skills: string[];
-    profileImgURL: string;
-    portfolioURL: string;
-}
+const UserProfile = () => {
 
-const propsProfile = (props: ProfileProps) => {
+    const [user, setUser] = useState({ name: "", age: "" });
 
     return (
-        <div className="card">
-            <img src={props.profileImgURL} alt="Profile" className="card-img-top" />
-            <div className="card-body">
-                <h5 className="card-title">{props.name}</h5>
-                <p className="card-text">{props.summary}</p>
-                <p className="card-text"><strong>Email:</strong> {props.email}</p>
-                <p className="card-text"><strong>Phone:</strong> {props.phone}</p>
-                <p className="card-text"><strong>Skills:</strong> {props.skills.join(", ")}</p>
-                <a href={props.portfolioURL} className="btn btn-primary">View Profile</a>
-            </div>
+        <div>
+            <input type="text"
+                placeholder='Enter Name'
+                value={user.name}
+                onChange={(e) => setUser({ ...user, name: e.target.value })}
+            />
+
+            <input type="number"
+                placeholder='Enter Age'
+                value={user.age}
+                onChange={(e) => setUser({ ...user, age: e.target.value })} />
+            <p>Name: {user.name}, Age: {user.age}</p>
         </div>
+
     );
 }
-export default propsProfile;
+
+export default UserProfile;
