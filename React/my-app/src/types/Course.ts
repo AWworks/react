@@ -1,7 +1,7 @@
 export type Course = {
     title: string;
-    instructor: string;
-    duration: number; // in hours
+    instructor : string;
+    duration: number;
+    // imageUrl: string;
     topics: string[];
-    level: string; // e.g., Beginner, Intermediate, Advanced
 }
