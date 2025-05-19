@@ -1,0 +1,15 @@
+
+.card .img-fit{
+    aspect-ratio: 16/9;
+    object-fit: contain;
+}
+
+
+.card-body {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+.card-text {
+    flex-grow: 1;
+}
