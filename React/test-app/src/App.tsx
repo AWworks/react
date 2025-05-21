@@ -6,6 +6,7 @@ import CourseList from './components/CourseList';
 import Footer from './components/Footer';
 import PostsList from './components/PostLists';
 import Products from './components/Products';
+import RecipeList from './components/RecipeList';
 
 function App() {
 
@@ -13,12 +14,13 @@ function App() {
     <div className="container">
       <Navbar />
       <main className='container my-4'>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/courses" element={<CourseList />} />
-            <Route path="/posts" element={<PostsList />} />
-            <Route path="/products" element={<Products />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/courses" element={<CourseList />} />
+          <Route path="/posts" element={<PostsList />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/recipes" element={<RecipeList />} />
+        </Routes>
       </main>
       <Footer />
     </div>
