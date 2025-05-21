@@ -2,18 +2,25 @@ import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Contact from './components/Contact'
+import Home from './components/Home';
+import CourseList from './components/CourseList';
+import Footer from './components/Footer';
+import PostsList from './components/PostLists';
+import Products from './components/Products';
+import RecipeList from './components/RecipeList';
 
 function App() {
 
   return (
     <div className="container-fluid d-flex flex-column min-vh-100">
       <Navbar />
-      <main className="container my-4 flex-grow-1">
+      <main className='container my-4'>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/courses" element={<CourseList />} />
+          <Route path="/posts" element={<PostsList />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/recipes" element={<RecipeList />} />
         </Routes>
       </main>
       <Footer />
