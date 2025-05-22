@@ -1,5 +1,6 @@
-// import './App.css'
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom'
+import './App.css'
+import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Home from './components/Home';
 import CourseList from './components/CourseList';
@@ -12,7 +13,7 @@ import RecipeDetails from './components/RecipeDetails';
 function App() {
 
   return (
-    <div className="container">
+    <div className="container-fluid d-flex flex-column min-vh-100">
       <Navbar />
       <main className='container my-4'>
         <Routes>
