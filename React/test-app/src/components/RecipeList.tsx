@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 interface Recipe {
     id: number;
@@ -24,7 +25,7 @@ const RecipeList = () => {
                 throw new Error("An error occurred while fetching data.");
             }
 
-            const data: Recipe = await response.json();
+            const data = await response.json();
             let recipeData: Recipe[] = data.recipes;
             setRecipes(recipeData);
             setLoading(false)
@@ -62,9 +63,11 @@ const RecipeList = () => {
                                 <h5 className="card-title">{recipe.name}</h5>
                                 <h6 className="text-info">Cuisine: {recipe.cuisine}</h6>
                                 <p className="card-text">Time to cook: {recipe.cookTimeMinutes} minutes</p>
-                                <ul>
-                                    {/* {recipe.ingredients} */}
-                                </ul>
+                            </div>
+                            <div className="card-footer">
+                                <Link to={`/recipes/${recipe.id}`}>
+                                    View Details
+                                </Link>
                             </div>
                         </div>
                     </div>

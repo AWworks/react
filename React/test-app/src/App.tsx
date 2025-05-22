@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import PostsList from './components/PostLists';
 import Products from './components/Products';
 import RecipeList from './components/RecipeList';
+import RecipeDetails from './components/RecipeDetails';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/posts" element={<PostsList />} />
           <Route path="/products" element={<Products />} />
           <Route path="/recipes" element={<RecipeList />} />
+          <Route path="/recipes/:id" element={<RecipeDetails />} />
         </Routes>
       </main>
       <Footer />

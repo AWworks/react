@@ -4,6 +4,7 @@ import CourseList from './components/CourseList'
 import About from './About'
 import Navbar from './components/Navbar'
 import Contact from './components/Contact'
+import MovieList from './components/MovieList'
 function App() {
 
 
@@ -12,7 +13,7 @@ function App() {
       <Navbar />
       <main>
         <Routes>
-          <Route path="/" element={<CourseList />} />
+          <Route path="/" element={<MovieList />} />
           <Route path="courses" element={<CourseList />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
