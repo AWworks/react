@@ -2,10 +2,9 @@ import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
-import Home from './components/Home';
 import CourseList from './components/CourseList';
 import Footer from './components/Footer';
-import PostsList from './components/PostLists';
+// import PostsList from './components/PostLists';
 import Products from './components/Products';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
@@ -19,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<CourseList />} />
-          <Route path="/posts" element={<PostsList />} />
+          {/* <Route path="/posts" element={<PostsList />} />  */}
           <Route path="/products" element={<Products />} />
           <Route path="/recipes" element={<RecipeList />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />

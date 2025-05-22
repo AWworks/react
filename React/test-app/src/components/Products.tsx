@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import './Products.css'
+// import './Products.css'
 
 interface Product {
   id: number;
@@ -29,7 +29,7 @@ const Products = () => {
         {products.map((product) => (
           <div className="col-md-4 ">
             <div className="card vh-100" key={product.id}>
-              <img src={product.image} className="card-img-top pt-2 img-fit" alt="..." />
+              <img src={product.image} className="card-img-top pt-2 " alt="..." />
               <div className="card-body">
                 <h5 className="card-title">{product.title}</h5>
                 <h6 className="text-info">Price: {product.price}</h6>
