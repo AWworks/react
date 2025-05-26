@@ -11,8 +11,8 @@ const MovieCard = (props: MovieProps) => {
             <h2>{props.name}</h2>
             <p>Rating: {props.rating}/10</p>
             <p>Cast:</p>
-            <ul>
-                {props.actors.map((actor, i) => <li key={i}>{actor}</li>)}
+            <ul className="list-group list-group-flush">
+                {props.actors.map((actor, i) => <li className="list-group-item" key={i}>{actor}</li>)}
             </ul>
             <p>{props.isRecommended ? "Highly Recommended!" : "Optional Watch"}</p>
         </div>

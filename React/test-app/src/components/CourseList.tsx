@@ -1,5 +1,5 @@
 import CourseCard from "./CourseCard";
-import { type Course } from "../types/Course";
+import { type Course } from "../types/Course"
 
 const CourseList = () => {
     const courses: Course[] = [
