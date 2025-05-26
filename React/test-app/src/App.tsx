@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Products from './components/Products';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
+import RecipeListSearch from './components/RecipeListSearch';
 
 function App() {
 
@@ -19,9 +20,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<CourseList />} />
-          {/* {/* <Route path="/posts" element={<PostsList />} />  */} 
+          {/* {/* <Route path="/posts" element={<PostsList />} />  */}
           <Route path="/products" element={<Products />} />
-          <Route path="/recipes" element={<RecipeList />} />
+          <Route path="/recipes" element={<RecipeListSearch />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />
         </Routes>
       </main>
