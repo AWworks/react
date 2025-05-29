@@ -6,8 +6,11 @@ import CourseList from './components/CourseList';
 import Footer from './components/Footer';
 // import PostsList from './components/PostLists';
 import Products from './components/Products';
-import RecipeList from './components/RecipeList';
+import RecipeListSSPage from './components/RecipeListSSPage';
 import RecipeDetails from './components/RecipeDetails';
+import CourseEdit from "./components/CourseEdit";
+import CourseAdd from "./components/CourseAdd";
+
 
 function App() {
 
@@ -18,9 +21,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<CourseList />} />
+          <Route path='addcourse' element={<CourseAdd />} />
+          <Route path='editcourse' element={<CourseEdit />} />
           {/* <Route path="/posts" element={<PostsList />} />  */}
           <Route path="/products" element={<Products />} />
-          <Route path="/recipes" element={<RecipeList />} />
+          <Route path="/recipes" element={<RecipeListSSPage />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />
         </Routes>
       </main>
