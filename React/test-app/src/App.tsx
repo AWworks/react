@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import CourseList from './components/CourseList';
 import Footer from './components/Footer';
 // import PostsList from './components/PostLists';
+// import PostsList from './components/PostLists';
 import Products from './components/Products';
 import RecipeListSSPage from './components/RecipeListSSPage';
 import RecipeDetails from './components/RecipeDetails';

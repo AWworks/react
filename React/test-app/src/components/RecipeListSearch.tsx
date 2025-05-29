@@ -12,18 +12,18 @@ type Recipe = {
 
 const RECORDS_PER_PAGE = 10;
 
-const RecipeList = () => {
+const RecipeListSearch = () => {
     const [recipes, setRecipes] = useState<Recipe[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<boolean | null>(null);
 
     const [currentPage, setCurrentPage] = useState<number>(0)
-
+    const [searchParam, setSearchParam] = useState<string | null>(null);
 
     const fetchRecipes = async () => {
-
         try {
-            const response = await fetch("https://dummyjson.com/recipes");
+            let apiUrl = `https://dummyjson.com/recipes/search?q=${searchParam}`;
+            const response = await fetch(apiUrl);
 
             if (!response.ok) {
                 throw new Error("An error occurred while fetching data.");
@@ -42,25 +42,15 @@ const RecipeList = () => {
 
     useEffect(() => {
         fetchRecipes();
-    }, []);
+    }, [searchParam]);
 
-    //Calculate the number of recipes
-    const totalRecipes = recipes.length;
-    const totalPages = Math.ceil(totalRecipes / RECORDS_PER_PAGE);
 
-    //Calculate start index and end index for Current page
-    const startIndex = (currentPage - 1) * RECORDS_PER_PAGE;
-    const endIndex = startIndex + RECORDS_PER_PAGE;
+    const handleSearchInputChange = (e: any) => {
+        setSearchParam(e.target.value);
+        console.log(`searchString: ${searchParam}`);
 
-    //Slice the recipes array to get onlythe recipes for the crrent page
-    const paginatedRecipes = recipes.slice(startIndex, endIndex);
 
-    //Generate array of page numbers
-    const pageNumbers = [];
-    for (let i = 1; i <= totalPages; i++) {
-        pageNumbers.push(i);
     }
-
     // console.log(data);
     if (loading) {
         return (
@@ -76,8 +66,14 @@ const RecipeList = () => {
     return (
         <div>
             <h1 className="text-info fw-bold">Latest Recipes</h1>
+            <div className="mb-3">
+                <input type="text" className="form-control" id="searchRecipeInput"
+                    placeholder="Type to search recipes..."
+                    onChange={handleSearchInputChange} />
+            </div>
             <div className="row g-3">
-                {paginatedRecipes.map((recipe) => (
+
+                {recipes.map((recipe) => (
                     <div className="col-md-4" key={recipe.id}>
                         <div className="card" >
                             <img src={recipe.image} className="card-img-top" alt="..." />
@@ -98,29 +94,8 @@ const RecipeList = () => {
 
                 ))}
             </div>
-            <nav className="mt-4">
-                <ul className="pagination justify-content-center">
-                    {pageNumbers.map((pageNumber) => (
-                        <li
-                            className={
-                                currentPage == pageNumber ? "page-item active" : "page-item"
-                            }
-                            key={pageNumber}
-                        >
-                            <button
-                                className="page-link"
-                                onClick={() => {
-                                    setCurrentPage(pageNumber); // Set the current page
-                                    window.scrollTo({ top: 0 }); // Scroll to top on page change
-                                }}
-                            >
-                                {pageNumber}
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
+
         </div>
     );
 };
-export default RecipeList;
+export default RecipeListSearch;
