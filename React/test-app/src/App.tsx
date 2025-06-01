@@ -23,7 +23,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<CourseList />} />
           <Route path='addcourse' element={<CourseAdd />} />
-          <Route path='editcourse' element={<CourseEdit />} />
+          <Route path='editcourse/:id' element={<CourseEdit />} />
           {/* <Route path="/posts" element={<PostsList />} />  */}
           <Route path="/products" element={<Products />} />
           <Route path="/recipes" element={<RecipeListSSPage />} />

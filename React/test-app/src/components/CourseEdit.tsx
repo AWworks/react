@@ -1,23 +1,37 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const apiUrl = "https://68373bd5664e72d28e440d9d.mockapi.io/api/courses";
 
 const CourseEdit = () => {
+
+    let param = useParams();
     const [name, setName] = useState<string>("");
     const [description, setDescription] = useState<string>("");
 
     const navigate = useNavigate();
 
-    const addCourse = async () => {
+    const loadCourse = async () => {
+        let response = await fetch(`${apiUrl}/${param.id}`);
+        let data = await response.json();
+
+        setName(data.name);
+        setDescription(data.description);
+    }
+
+    useEffect(() => {
+        loadCourse();
+    }, [param.id]);
+
+    const updateCourse = async () => {
 
         const course = {
             name,
             description
         }
 
-        await fetch(apiUrl, {
-            method: "POST",
+        await fetch(`${apiUrl}/${param.id}`, {
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -29,7 +43,7 @@ const CourseEdit = () => {
 
     return (
         <div className="container">
-            <h2 className="text-primary">Add Course</h2>
+            <h2 className="text-primary">Edit Course</h2>
             <div id="addCourseForm" className="border border-1 rounded shadow p-4">
                 <div className="mb-4">
                     <label htmlFor="titleTextBox">Course Name</label>
@@ -54,7 +68,7 @@ const CourseEdit = () => {
                     />
                 </div>
                 <div className="mt-5 ">
-                    <button className="btn btn-primary w-100" onClick={() => addCourse()}>Add Course</button>
+                    <button className="btn btn-primary w-100" onClick={() => updateCourse()}>Submit</button>
                 </div>
             </div>
         </div>

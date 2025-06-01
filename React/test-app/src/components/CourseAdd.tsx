@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const apiUrl = "https://68373bd5664e72d28e440d9d.mockapi.io/api/courses";
