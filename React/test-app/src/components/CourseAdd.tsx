@@ -7,10 +7,22 @@ const CourseAdd = () => {
     const [name, setName] = useState<string>("");
     const [description, setDescription] = useState<string>("");
 
+    const [error, setError] = useState<string | null>(null);
+    const [success, setSuccess] = useState<string | null>(null);
+
     const navigate = useNavigate();
 
     const addCourse = async () => {
 
+        if (name.trim().length == 0) {
+            setError("Course Name is required.");
+            return;
+        }
+
+        if (description.trim().length < 15) {
+            setError("Course Description must be atleast 15 characters.");
+            return;
+        }
         const course = {
             name,
             description
@@ -23,14 +35,15 @@ const CourseAdd = () => {
             },
             body: JSON.stringify(course),
         });
-
+        setName("");
+        setDescription("");
         navigate("/courses");
     }
 
     return (
         <div className="container">
             <h2 className="text-primary">Add Course</h2>
-            <div id="addCourseForm" className="border border-1 rounded shadow p-4">
+            <form id="addCourseForm" onSubmit={addCourse} className="border border-1 rounded shadow p-4">
                 <div className="mb-4">
                     <label htmlFor="titleTextBox">Course Name</label>
                     <input type="text"
@@ -54,9 +67,9 @@ const CourseAdd = () => {
                     />
                 </div>
                 <div className="mt-5 ">
-                    <button className="btn btn-primary w-100" onClick={() => addCourse()}>Add Course</button>
+                    <button className="btn btn-primary w-100" type="submit">Add Course</button>
                 </div>
-            </div>
+            </form>
         </div>
     );
 }
