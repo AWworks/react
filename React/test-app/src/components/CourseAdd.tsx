@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const apiUrl = "https://68373bd5664e72d28e440d9d.mockapi.io/api/courses";
@@ -12,7 +12,10 @@ const CourseAdd = () => {
 
     const navigate = useNavigate();
 
-    const addCourse = async () => {
+    const addCourse = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setError(null);
+        setSuccess(null);
 
         if (name.trim().length == 0) {
             setError("Course Name is required.");
@@ -43,6 +46,8 @@ const CourseAdd = () => {
     return (
         <div className="container">
             <h2 className="text-primary">Add Course</h2>
+            {error && <p className="text-danger">{error}</p>}
+            {success && <p className="text-success">{success}</p>}
             <form id="addCourseForm" onSubmit={addCourse} className="border border-1 rounded shadow p-4">
                 <div className="mb-4">
                     <label htmlFor="titleTextBox">Course Name</label>

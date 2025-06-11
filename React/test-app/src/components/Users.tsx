@@ -27,7 +27,7 @@ const Users = () => {
             <div className="row g-3">
                 {users.map((user) => (
                     <div className="col-md-4 ">
-                        <div className="card vh-100" key={user.id}>
+                        <div className="card vh-50" key={user.id}>
 
                             <div className="card-body">
                                 <h5 className="card-title">{user.name}</h5>

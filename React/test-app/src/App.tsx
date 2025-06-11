@@ -11,6 +11,7 @@ import RecipeListSSPage from './components/RecipeListSSPage';
 import RecipeDetails from './components/RecipeDetails';
 import CourseEdit from "./components/CourseEdit";
 import CourseAdd from "./components/CourseAdd";
+import CounterUsingReducer from './components/CounterUsingReducer';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/recipes" element={<RecipeListSSPage />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />
+          <Route path="/counter" element={<CounterUsingReducer />} />
         </Routes>
       </main>
       <Footer />
