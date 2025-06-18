@@ -12,14 +12,15 @@ import RecipeDetails from './components/RecipeDetails';
 import CourseEdit from "./components/CourseEdit";
 import CourseAdd from "./components/CourseAdd";
 import CounterUsingReducer from './components/CounterUsingReducer';
+import TodoListReducer from './components/TodoListReducer';
 
 
 function App() {
 
   return (
-    <div className="container-fluid d-flex flex-column min-vh-100">
+    <div className="container-fluid d-flex flex-column ">
       <Navbar />
-      <main className='container my-4'>
+      <main className='container min-vh-100 my-4'>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<CourseList />} />
@@ -29,7 +30,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/recipes" element={<RecipeListSSPage />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />
-          <Route path="/counter" element={<CounterUsingReducer />} />
+          <Route path="/todo" element={<TodoListReducer />} />
         </Routes>
       </main>
       <Footer />

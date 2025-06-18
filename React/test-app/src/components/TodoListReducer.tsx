@@ -1,4 +1,4 @@
-import { act, useReducer, useState } from "react";
+import { useReducer, useState } from "react";
 
 type Todo = {
     id: number;
